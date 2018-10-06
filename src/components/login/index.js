@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './login.css';
+import avatar from '../../images/avatar.png'
 
 class Login extends Component {
 
@@ -36,30 +37,41 @@ class Login extends Component {
   }
 
   render() {
-  
     return (
-      <div className="Login">
+      <div className="login center">
+        <form>
         <div className="loginFormContainer">
-
+          <div className="center">
+            <img className="avatarImage" src={avatar}></img>
+          </div>
           <div className="userNameField">
-            <span>UserName:</span>
+            <div>
+              <b>UserName:</b>
+            </div>
+            <div>
             <input type="text" 
                    value={this.state.userName}
-                   onChange={(e) => this.handleUserNameChange(e.target.value)}/>
+                   placeHolder={"Enter UserName"}
+                   onChange={(e) => this.handleUserNameChange(e.target.value)}
+                   />
+            </div>       
           </div>
 
           <div className="passwordField">
-            <span>Password:</span>
-            <input type="text" 
+            <div>  
+              <b>Password:</b>
+            </div>
+            <input type="password" 
                    value={this.state.password}
+                   placeHolder={"Enter password"}
                    onChange={(e) => this.handlePasswordChange(e.target.value)}/>
           </div>
 
-          <div>
-            <button onClick = { () => this.handleLogin() } >Login yo!</button>
+          <div className="center">
+            <button className="submitButton" onClick = { () => this.handleLogin() } >Login yo!</button>
           </div>
-
         </div>
+        </form>
       </div>
     );
   }
