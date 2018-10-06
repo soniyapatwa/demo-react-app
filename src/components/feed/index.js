@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import './feed.css';
 
-function header() {
+const HeaderComponent = (props) =>{
+    console.log(props);
     return (
-        <div className = "header">
-            <div className="title center">
-            User Feed
+        <header className="stickyHeader" id="stickyHeader">
+          <div className="navbar">
+            <ul>
+              <li><a href="#">Home</a></li>
+            </ul>
+            <div className="logoutButton" onClick = { () => props.handleLogout() } >
+                        <span className="logoutButtonText">Logout</span>
             </div>
-            <div className="rightContainer">
-                <button onClick = { () => this.handleLogout() } >
-                        Logout
-                </button>
-            </div>
-        </div>
+          </div>
+        </header>
     )
 }
 
@@ -44,10 +45,12 @@ class Feed extends Component {
         for(let i = 0; i < json.length; i++) {
             userListArray.push(
                 <div className = "userCardContainer">
-                    <div className = "userImage">
-                        <div className = "userDummyImage center">
-                            {`${json[i].name[0]} ${json[i].name.split(" ")[1][0]}`}
-                        </div>
+                    <div className="userImageContainer center">
+                    <div className = "userImage center">
+                            <div className = "userDummyImage center">
+                                {`${json[i].name[0]} ${json[i].name.split(" ")[1][0]}`}
+                            </div>
+                    </div>
                     </div>
                     <div className = "userDetails">
                         <div className = "userName">
@@ -84,11 +87,12 @@ class Feed extends Component {
 
     render() {
         return (
+        <div>
+            <HeaderComponent handleLogout={this.handleLogout.bind(this)}/>
             <div className = "feedContainer">
-                {header()}
-                {this.state.userListArray}
-                {footer()}  
+                {this.state.userListArray} 
             </div>
+        </div>    
         )
     }
 }

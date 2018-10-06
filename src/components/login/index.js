@@ -68,7 +68,7 @@ class Login extends Component {
           </div>
 
           <div className="center">
-            <button className="submitButton" onClick = { () => this.handleLogin() } >Login yo!</button>
+            <button onClick = { () => this.handleLogin() } >Login yo!</button>
           </div>
         </div>
         </form>
