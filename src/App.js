@@ -5,7 +5,7 @@ import Feed from './components/feed/index';
 class App extends Component {
 
   state = {
-    'currentComponent': 'Login',
+    'currentComponent': 'Feed',
   }
 
   switchCurrentCompnent(component) {

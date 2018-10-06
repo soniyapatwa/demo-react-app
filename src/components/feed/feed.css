@@ -1,0 +1,61 @@
+.feedContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.userCardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 150px;
+    width: 400px;
+    min-height: 150px;
+    margin: 10px;
+    border: 2px solid gray;
+    padding: 10px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userImage {
+    width: 100px;
+    background-color: salmon;   
+}
+.userDummyImage {
+
+}
+.userDetails {
+    width: 300px;   
+}
+.userName{
+    font-weight: bold;
+}
+.otherText {
+    font-size: 10px;
+}
+.header {
+    position: fixed;
+    height: 50px;
+    width: 100vw;
+    background-color: salmon; 
+    display: flex; 
+}
+
+.title {
+    width: 90%;
+}
+
+.rightContainer {
+    width: 10%;
+}
+.footer {
+    min-height: 20px;
+    width: 100vw;
+    background-color: salmon;  
+}
