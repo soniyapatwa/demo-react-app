@@ -18,14 +18,8 @@ class Login extends Component {
   }
 
   handleLogin() {
-
-    console.log(this.state.userName);
-    console.log(this.state.password);
-    console.log('loginnn!!')
-
-    const userName = this.state.userName
-    const password = this.state.password
-
+    const userName = this.state.userName;
+    const password = this.state.password;
     if(userName.length === 0 || password.length === 0) {
       alert("please enter valid values")
     }
@@ -33,7 +27,6 @@ class Login extends Component {
       //push to feed page
       this.props.onSwitchCurrentCompnent('Login');
     }
-
   }
 
   render() {
