@@ -8,15 +8,16 @@ nav
 }
 .navbar ul li a
 {
-    color:#ffffff;
-        text-decoration:none;
+    font-weight: bold;
+    color: white;
+    text-decoration:none;
     border-bottom:none;
 }
 .navbar
 {
-        background-color: #000;
-    background-image: linear-gradient(to bottom, #a357fd, #8b3d9e);
-    box-shadow: 0 5px 10px #0000003d, 0 5px 10px #0000003d;
+    background-color: #6acd79;
+    /* background-image: linear-gradient(to bottom, white, #6acd79); */
+    box-shadow: 0 0.1px 7px #0000003d;
     position: relative;
 }
 .stickyHeader
@@ -38,12 +39,11 @@ nav
     text-transform: uppercase;
 }
 .navbar ul li:hover{
-        background: #a641da85;
+    background: #63bd6f;
     transition: 0.4s ease-in-out;
 }
 .navbar ul li:hover a
 {
-    color:#ffffff;
 }
 .header-text h2
 {
@@ -53,7 +53,7 @@ nav
 }
 .header-text
 {
-        background-color: #f2f3f8;
+    background-color: black;
     width: 100%;
     float: left;
     padding: 40px 40px;
@@ -71,12 +71,19 @@ nav
     width: 100px;
     margin: 4px;
     height: 10px;
-    background: darkviolet;
+    /* background: #6acd79; */
     color: white;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 7px;
     text-align: center;
     line-height: 10px;
+}
+.logoutButton a {
+    font-weight: bold;
+    color: white;
+    text-decoration:none;
+    border-bottom:none;
+
 }
 
 .feedContainer {
@@ -97,9 +104,10 @@ nav
     width: 400px;
     min-height: 150px;
     margin: 10px;
-    border: 2px solid gray;
+    border-radius: 7px;
+    /* border: 2px solid gray; */
     padding: 10px;
-    box-shadow: 0px 0px 33px -1px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 0px 33px -1px rgba(0, 0, 0, 0.15);
 }
 .center {
     display: flex;
@@ -109,15 +117,14 @@ nav
 .userImageContainer {
     height: 100%;
     width: 100px;
-    background: #2a2b39;
 }
 .userImage {
     background: #6acd79;
     color: #fff;
     z-index: 11;
-    padding: 10px;
-    padding: 10px;
-    border-radius: 35%;
+    padding: 20px;
+    padding: 20px;
+    border-radius: 50%;
     border: 8px solid #fff;
     position: relative;
     /* pointer-events: none; */
@@ -128,7 +135,7 @@ nav
     font-size: 4em;
 }
 .userDummyImage {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 }
 .userDetails {
