@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './login.css';
+import avatar from '../../images/avatar.png'
 
 class Login extends Component {
 
@@ -17,14 +18,8 @@ class Login extends Component {
   }
 
   handleLogin() {
-
-    console.log(this.state.userName);
-    console.log(this.state.password);
-    console.log('loginnn!!')
-
-    const userName = this.state.userName
-    const password = this.state.password
-
+    const userName = this.state.userName;
+    const password = this.state.password;
     if(userName.length === 0 || password.length === 0) {
       alert("please enter valid values")
     }
@@ -32,34 +27,44 @@ class Login extends Component {
       //push to feed page
       this.props.onSwitchCurrentCompnent('Login');
     }
-
   }
 
   render() {
-  
     return (
-      <div className="Login">
+      <div className="login center">
+        <form>
         <div className="loginFormContainer">
-
+          <div className="center">
+            <img className="avatarImage" src={avatar}></img>
+          </div>
           <div className="userNameField">
-            <span>UserName:</span>
+            <div>
+              <b>UserName:</b>
+            </div>
+            <div>
             <input type="text" 
                    value={this.state.userName}
-                   onChange={(e) => this.handleUserNameChange(e.target.value)}/>
+                   placeHolder={"Enter UserName"}
+                   onChange={(e) => this.handleUserNameChange(e.target.value)}
+                   />
+            </div>       
           </div>
 
           <div className="passwordField">
-            <span>Password:</span>
-            <input type="text" 
+            <div>  
+              <b>Password:</b>
+            </div>
+            <input type="password" 
                    value={this.state.password}
+                   placeHolder={"Enter password"}
                    onChange={(e) => this.handlePasswordChange(e.target.value)}/>
           </div>
 
-          <div>
+          <div className="center">
             <button onClick = { () => this.handleLogin() } >Login yo!</button>
           </div>
-
         </div>
+        </form>
       </div>
     );
   }
