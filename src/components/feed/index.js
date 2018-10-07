@@ -10,7 +10,8 @@ const HeaderComponent = (props) =>{
               <li><a href="#">Home</a></li>
             </ul>
             <div className="logoutButton" onClick = { () => props.handleLogout() } >
-                        <span className="logoutButtonText">Logout</span>
+            <a href="#">Logout</a>
+                        {/* <span className="logoutButtonText">Logout</span> */}
             </div>
           </div>
         </header>
