@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './components/login/index';
 import Feed from './components/feed/index';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
 
@@ -19,16 +20,13 @@ class App extends Component {
 
   render() {
     return (
-
-      <div className="App">
-      { this.state.currentComponent === 'Login' ? 
-      <Login 
-      onSwitchCurrentCompnent = {this.switchCurrentCompnent.bind(this)} /> 
-      : 
-      <Feed 
-      onSwitchCurrentCompnent = {this.switchCurrentCompnent.bind(this)} /> }
-      </div>
-
+      <Router>
+        <div className="App">
+        <Route exact path="/" component={Login} />
+        <Route path="/login" component={Login} />
+        <Route path="/feed" component={Feed} />
+        </div>
+      </Router>
     );
   }
 }

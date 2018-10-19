@@ -25,17 +25,17 @@ class Login extends Component {
     }
     else {
       //push to feed page
-      this.props.onSwitchCurrentCompnent('Login');
+      this.props.history.push('/feed');
     }
   }
 
   render() {
     return (
       <div className="login center">
-        <form>
+        <form onSubmit={(e)=> e.preventDefault()}>
         <div className="loginFormContainer">
           <div className="center">
-            <img className="avatarImage" src={avatar}></img>
+            <img className="avatarImage" src={avatar} alt="login-avatar"></img>
           </div>
           <div className="userNameField">
             <div>
@@ -44,7 +44,7 @@ class Login extends Component {
             <div>
             <input type="text" 
                    value={this.state.userName}
-                   placeHolder={"Enter UserName"}
+                   placeholder={"Enter UserName"}
                    onChange={(e) => this.handleUserNameChange(e.target.value)}
                    />
             </div>       
@@ -56,7 +56,7 @@ class Login extends Component {
             </div>
             <input type="password" 
                    value={this.state.password}
-                   placeHolder={"Enter password"}
+                   placeholder={"Enter password"}
                    onChange={(e) => this.handlePasswordChange(e.target.value)}/>
           </div>
 

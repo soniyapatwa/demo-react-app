@@ -1,30 +1,25 @@
 import React, { Component } from 'react';
 import './feed.css';
 
-const HeaderComponent = (props) =>{
-    console.log(props);
+const HeaderComponent = (headerProps) => {
     return (
         <header className="stickyHeader" id="stickyHeader">
           <div className="navbar">
             <ul>
-              <li><a href="#">Home</a></li>
+              <li>
+                  <a href='JavaScript:Void(0);'>
+                  Home
+                  </a>
+              </li>
             </ul>
-            <div className="logoutButton" onClick = { () => props.handleLogout() } >
-            <a href="#">Logout</a>
-                        {/* <span className="logoutButtonText">Logout</span> */}
+            <div className="logoutButton" onClick = { () => headerProps.history.push('/login') } >
+            <a href={'javaScript:void(0);'}>Logout</a>
             </div>
           </div>
         </header>
     )
 }
 
-const footer = () => {
-    return (
-        <div className = "footer">
-            dfbsdhf
-        </div>
-    )
-}
 
 class Feed extends Component {
 
@@ -33,19 +28,17 @@ class Feed extends Component {
     }
 
     componentWillMount() {
-        console.log('Feed opening---componenet will mount:-');
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(json => this.handleResponse(json));
     }
     
     handleResponse(json) {
-        console.log(json)
-
+        
         let userListArray = []
-        for(let i = 0; i < json.length; i++) {
+        for(let i in json){
             userListArray.push(
-                <div className = "userCardContainer">
+                <div className = "userCardContainer" key={`index${i}`}>
                     <div className="userImageContainer center">
                     <div className = "userImage center">
                             <div className = "userDummyImage center">
@@ -89,7 +82,7 @@ class Feed extends Component {
     render() {
         return (
         <div>
-            <HeaderComponent handleLogout={this.handleLogout.bind(this)}/>
+            <HeaderComponent history={this.props.history}/>
             <div className = "feedContainer">
                 {this.state.userListArray} 
             </div>
